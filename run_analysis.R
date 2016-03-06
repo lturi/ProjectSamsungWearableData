@@ -56,10 +56,11 @@ tidy_activities<- tidy_activities[,c(2,8,3,4,5,6,7)]
 names(tidy_activities) <- c("subject","activity","domain","signal","function","axis","value")
 
 #group and avg to get new dataset
-agg_results <- DT[,mean(value),
+tidy_activities <- data.table(tidy_activities)
+agg_results <- tidy_activities[,mean(value),
                by = c("subject","activity","domain","signal","function","axis")]
 names(agg_results) <- c("subject","activity","domain","signal","calctype","axis","average")
 agg_results <- agg_results[order(subject,activity,-domain,signal,axis,calctype),]
 
 #write out dataset
-write.table(agg_results,file="run_analysis.txt",row.names=FALSE)
+write.table(agg_results,file="run_analysis_data.txt",row.names=FALSE)
