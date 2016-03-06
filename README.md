@@ -20,7 +20,7 @@ dir()
 [5] "run_analysis.txt"                         "UCI HAR Dataset"  
 ```
 
-The end result is a clean dataset as described in the run_analysis_codebook.txt found in this repository
+The end result is a clean dataset as described in the run_analysis_codebook.html found in this repository
 
 **Required libraries**
 
